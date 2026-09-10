@@ -70,8 +70,8 @@ const SERVERS = [
     },
     {
         name: "AutoEmbed",
-        movie: (id: string) => `https://autoembed.co/movie/${id}`,
-        show: (id: string, s: number, e: number) => `https://autoembed.co/tv/${id}/${s}/${e}`,
+        movie: (id: string) => `https://autoembed.co/movie/tmdb/${id}`,
+        show: (id: string, s: number, e: number) => `https://autoembed.co/tv/tmdb/${id}/${s}/${e}`,
         useSandbox: false
     },
     {
