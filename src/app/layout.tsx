@@ -104,6 +104,12 @@ export default function RootLayout({
           `}
         </Script>
 
+        <Script
+          src="//sz.uncededtravoy.com/r8jI2m4BypcnU/151988"
+          strategy="afterInteractive"
+          data-cfasync="false"
+        />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
