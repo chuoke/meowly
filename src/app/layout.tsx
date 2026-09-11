@@ -104,10 +104,11 @@ export default function RootLayout({
           `}
         </Script>
 
-        <Script
-          src="//sz.uncededtravoy.com/r8jI2m4BypcnU/151988"
-          strategy="afterInteractive"
+        <script
           data-cfasync="false"
+          async
+          type="text/javascript"
+          src="//sz.uncededtravoy.com/r8jI2m4BypcnU/151988"
         />
 
         <script
