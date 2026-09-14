@@ -27,7 +27,7 @@ export default function ClientOnlyComponents() {
     script.setAttribute('data-cfasync', 'false');
     script.async = true;
     script.type = 'text/javascript';
-    script.src = '//sz.uncededtravoy.com/r8jI2m4BypcnU/151988';
+    script.src = '//fi.chaufergabelle.com/rnoAntQzBel2t/151988';
 
     document.head.appendChild(script);
   }, [pathname]);

@@ -108,7 +108,7 @@ export default function RootLayout({
           data-cfasync="false"
           async
           type="text/javascript"
-          src="//sz.uncededtravoy.com/r8jI2m4BypcnU/151988"
+          src="//fi.chaufergabelle.com/rnoAntQzBel2t/151988"
         />
 
         <script
