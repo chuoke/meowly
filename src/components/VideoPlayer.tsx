@@ -20,9 +20,27 @@ interface VideoPlayerProps {
 
 const SERVERS = [
     {
+        name: "Filmu",
+        movie: (id: string) => `https://embed.filmu.in/movie/${id}`,
+        show: (id: string, s: number, e: number) => `https://embed.filmu.in/tv/${id}/${s}/${e}`,
+        useSandbox: false
+    },
+    {
         name: "PrimeSRC",
         movie: (id: string) => `https://primesrc.me/embed/movie?tmdb=${id}`,
         show: (id: string, s: number, e: number) => `https://primesrc.me/embed/tv?tmdb=${id}&season=${s}&episode=${e}`,
+        useSandbox: false
+    },
+    {
+        name: "Vidy",
+        movie: (id: string) => `https://www.vidy.st/movie/${id}?color=DC2626`,
+        show: (id: string, s: number, e: number) => `https://www.vidy.st/tv/${id}/${s}/${e}?color=DC2626&nextEpisode=true&episodeSelector=true`,
+        useSandbox: false
+    },
+    {
+        name: "Vidrift",
+        movie: (id: string) => `https://embed.vidrift.in/embed/movie/${id}?brand=Meowly`,
+        show: (id: string, s: number, e: number) => `https://embed.vidrift.in/embed/tv/${id}/${s}/${e}?brand=Meowly`,
         useSandbox: false
     },
     {
@@ -72,6 +90,12 @@ const SERVERS = [
         name: "AutoEmbed",
         movie: (id: string) => `https://autoembed.co/movie/tmdb/${id}`,
         show: (id: string, s: number, e: number) => `https://autoembed.co/tv/tmdb/${id}/${s}/${e}`,
+        useSandbox: false
+    },
+    {
+        name: "Cinezo",
+        movie: (id: string) => `https://player.cinezo.live/embed/movie/${id}?autoplay=false&poster=true&chromecast=true&servericon=true&setting=true&pip=true&font=Roboto&fontcolor=6f63ff&fontsize=20&opacity=0.5&primarycolor=e8b86d&secondarycolor=0a0a12&iconcolor=ffffff`,
+        show: (id: string, s: number, e: number) => `https://player.cinezo.live/embed/tv/${id}/${s}/${e}?autoplay=false&poster=true&chromecast=true&servericon=true&setting=true&pip=true&font=Roboto&fontcolor=6f63ff&fontsize=20&opacity=0.5&primarycolor=e8b86d&secondarycolor=0a0a12&iconcolor=ffffff`,
         useSandbox: false
     },
     {
