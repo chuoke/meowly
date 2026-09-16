@@ -122,12 +122,6 @@ export default function RootLayout({
           type="text/javascript"
           src="//ri.thlaspiyeaoman.com/iZvpfdi16luL/153388"
         />
-        <script
-          src="https://quge5.com/88/tag.min.js"
-          data-zone="281399"
-          async
-          data-cfasync="false"
-        />
 
         <script
           type="application/ld+json"

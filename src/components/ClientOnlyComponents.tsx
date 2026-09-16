@@ -17,7 +17,7 @@ export default function ClientOnlyComponents() {
 
   useEffect(() => {
     // Remove existing scripts if present to ensure reload on route navigation
-    const scriptIds = ['ad-network-script-1', 'ad-network-script-2', 'ad-network-script-3', 'ad-network-script-4'];
+    const scriptIds = ['ad-network-script-1', 'ad-network-script-2', 'ad-network-script-3'];
     scriptIds.forEach(id => {
       const existing = document.getElementById(id);
       if (existing) existing.remove();
@@ -27,17 +27,14 @@ export default function ClientOnlyComponents() {
       { id: 'ad-network-script-1', src: '//fi.chaufergabelle.com/rnoAntQzBel2t/151988' },
       { id: 'ad-network-script-2', src: '//mr.acktontables.com/svXxFoBaWzN/153387' },
       { id: 'ad-network-script-3', src: '//ri.thlaspiyeaoman.com/iZvpfdi16luL/153388' },
-      { id: 'ad-network-script-4', src: 'https://quge5.com/88/tag.min.js', dataZone: '281399' },
     ];
 
-    sources.forEach(({ id, src, dataZone }) => {
+    sources.forEach(({ id, src }) => {
       const script = document.createElement('script');
       script.id = id;
       script.setAttribute('data-cfasync', 'false');
-      if (dataZone) {
-        script.setAttribute('data-zone', dataZone);
-      }
       script.async = true;
+      script.type = 'text/javascript';
       script.src = src;
       document.head.appendChild(script);
     });

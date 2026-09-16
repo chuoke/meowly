@@ -9,9 +9,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://meowly.qzz.io",
   },
-  other: {
-    monetag: "3c36b031dbc68e194085c5d9ccf83a70",
-  },
 };
 
 export default async function Home() {
