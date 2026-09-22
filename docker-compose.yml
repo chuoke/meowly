@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_APP_URL: ${NEXT_PUBLIC_APP_URL:?Set NEXT_PUBLIC_APP_URL in your environment or .env file}
+        NEXT_PUBLIC_APP_NAME: ${NEXT_PUBLIC_APP_NAME:-Meowly}
+        NEXT_PUBLIC_AD_SCRIPT_URLS: ${NEXT_PUBLIC_AD_SCRIPT_URLS:-}
+      secrets:
+        - source: tmdb_api_key
+          target: tmdb_api_key
+    environment:
+      TMDB_API_KEY: ${TMDB_API_KEY:?Set TMDB_API_KEY in your environment or .env file}
+      MOCTALE_COOKIE: ${MOCTALE_COOKIE:-}
+    ports:
+      - "${PORT:-3000}:3000"
+    restart: unless-stopped
+
+secrets:
+  tmdb_api_key:
+    environment: TMDB_API_KEY
