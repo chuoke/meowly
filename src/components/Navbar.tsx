@@ -10,6 +10,8 @@ import { surpriseMe } from "@/app/actions";
 import { appName } from "@/lib/app-config";
 
 const Navbar = () => {
+    const appNameSuffix = appName.toLowerCase().endsWith("ly") ? appName.slice(-2) : appName.slice(-3);
+    const appNamePrefix = appName.slice(0, -appNameSuffix.length);
     const [isScrolled, setIsScrolled] = useState(false);
     const [isVisible, setIsVisible] = useState(true);
     const lastScrollYRef = React.useRef(0);
@@ -348,7 +350,7 @@ const Navbar = () => {
                                         <Cat className="h-5 w-5 text-accent" />
                                     </motion.div>
                                     <span className="text-xl font-black tracking-tighter text-white">
-                                        MEOW<span className="text-accent italic">LY</span>
+                                        {appNamePrefix}<span className="text-accent italic">{appNameSuffix}</span>
                                     </span>
                                 </Link>
 
