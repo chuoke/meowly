@@ -2,13 +2,13 @@ import React from "react";
 import { Gavel, Scale, AlertCircle, CheckCircle, ShieldCheck, HelpCircle } from "lucide-react";
 import BackButton from "@/components/BackButton";
 import { Metadata } from "next";
-import { appName } from "@/lib/app-config";
+import { appName, appUrl } from "@/lib/app-config";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: `Read the terms and conditions for using ${appName}.`,
   alternates: {
-    canonical: "https://meowly.qzz.io/terms",
+    canonical: `${appUrl}/terms`,
   },
 };
 

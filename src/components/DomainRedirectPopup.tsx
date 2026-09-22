@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { ArrowRight, Bookmark, ExternalLink, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { appName } from "@/lib/app-config";
+import { appName, appUrl } from "@/lib/app-config";
 
 export default function DomainRedirectPopup() {
   const [show, setShow] = useState(false);
@@ -17,7 +17,7 @@ export default function DomainRedirectPopup() {
     // Show only if the hostname is the old vercel domain
     if (hostname === "meowly.vercel.app") {
       // Calculate destination URL preserving the current path, query parameters, and hashes
-      const destination = `https://meowly.qzz.io${window.location.pathname}${window.location.search}${window.location.hash}`;
+      const destination = `${appUrl}${window.location.pathname}${window.location.search}${window.location.hash}`;
       setNewUrl(destination);
       setShow(true);
 
@@ -81,7 +81,7 @@ export default function DomainRedirectPopup() {
             </span>
             <div className="flex items-center gap-2">
               <span className="text-lg font-black tracking-tight text-white group-hover:text-accent transition-colors">
-                meowly.qzz.io
+                {new URL(appUrl).host}
               </span>
               <ExternalLink className="h-4 w-4 text-gray-500 group-hover:text-accent transition-colors" />
             </div>

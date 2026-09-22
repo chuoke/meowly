@@ -2,13 +2,13 @@ import { tmdb } from "@/lib/tmdb";
 import MovieRow from "@/components/MovieRow";
 import Link from "next/link";
 import { Metadata } from "next";
-import { appName } from "@/lib/app-config";
+import { appName, appUrl } from "@/lib/app-config";
 
 export const metadata: Metadata = {
     title: "Movie & TV Genres",
     description: `Browse through a wide range of movie and TV show categories on ${appName}.`,
     alternates: {
-        canonical: "https://meowly.qzz.io/categories",
+        canonical: `${appUrl}/categories`,
     },
 };
 

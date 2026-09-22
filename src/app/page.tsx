@@ -4,11 +4,11 @@ import { tmdb } from "@/lib/tmdb";
 import RecentlyPlayedRow from "@/components/RecentlyPlayedRow";
 import InfiniteGenres from "@/components/InfiniteGenres";
 import { Metadata } from "next";
-import { appName } from "@/lib/app-config";
+import { appName, appUrl } from "@/lib/app-config";
 
 export const metadata: Metadata = {
   alternates: {
-    canonical: "https://meowly.qzz.io",
+    canonical: appUrl,
   },
 };
 

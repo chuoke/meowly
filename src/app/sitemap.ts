@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next'
+import { appUrl } from "@/lib/app-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://meowly.qzz.io'
+  const baseUrl = appUrl
   
   const staticRoutes = [
     '',

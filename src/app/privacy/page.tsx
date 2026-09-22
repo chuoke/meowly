@@ -1,13 +1,13 @@
 import React from "react";
 import { Shield, Lock, Eye, FileText, Globe, Bell } from "lucide-react";
 import BackButton from "@/components/BackButton";
-import { appName } from "@/lib/app-config";
+import { appName, appUrl } from "@/lib/app-config";
 
 export const metadata = {
   title: "Privacy Policy",
   description: `Learn how ${appName} protects your privacy and handles your data.`,
   alternates: {
-    canonical: "https://meowly.qzz.io/privacy",
+    canonical: `${appUrl}/privacy`,
   },
 };
 

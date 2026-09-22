@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { appUrl } from "@/lib/app-config";
  
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -7,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/api/',
     },
-    sitemap: 'https://meowly.qzz.io/sitemap.xml',
+    sitemap: `${appUrl}/sitemap.xml`,
   }
 }

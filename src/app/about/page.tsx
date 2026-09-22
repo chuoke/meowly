@@ -1,13 +1,13 @@
 import React from "react";
 import { Info, Users, Heart, Zap, Globe, MessageCircle } from "lucide-react";
 import BackButton from "@/components/BackButton";
-import { appName } from "@/lib/app-config";
+import { appName, appUrl } from "@/lib/app-config";
 
 export const metadata = {
   title: "About Us | The Premier Free Movie Discovery Platform",
   description: `Learn more about ${appName}, the premier destination for free movie and TV show streaming discovery.`,
   alternates: {
-    canonical: "https://meowly.qzz.io/about",
+    canonical: `${appUrl}/about`,
   },
 };
 

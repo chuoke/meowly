@@ -1,13 +1,13 @@
 import React from 'react';
 import BackButton from "@/components/BackButton";
 import { Metadata } from "next";
-import { appName } from "@/lib/app-config";
+import { appName, appUrl } from "@/lib/app-config";
 
 export const metadata: Metadata = {
     title: "DMCA Policy",
     description: `${appName} respects the intellectual property rights of others and expects its users to do the same.`,
     alternates: {
-        canonical: "https://meowly.qzz.io/dmca",
+        canonical: `${appUrl}/dmca`,
     },
 };
 

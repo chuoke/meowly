@@ -3,13 +3,13 @@ import MovieRow from "@/components/MovieRow";
 import { tmdb } from "@/lib/tmdb";
 import InfiniteGenres from "@/components/InfiniteGenres";
 import { Metadata } from "next";
-import { appName } from "@/lib/app-config";
+import { appName, appUrl } from "@/lib/app-config";
 
 export const metadata: Metadata = {
     title: `Watch Top Rated TV Series and Shows Online Free | ${appName}`,
     description: `Watch the top rated TV series and shows online for free. Stream the best TV shows, currently airing series, and all-time favorites on ${appName}.`,
     alternates: {
-        canonical: "https://meowly.qzz.io/tv",
+        canonical: `${appUrl}/tv`,
     },
 };
 
@@ -38,7 +38,7 @@ export default async function TVPage() {
                             "item": {
                                 "@type": "TVSeries",
                                 "name": show.title || show.name,
-                                "url": `https://meowly.qzz.io/watch/tv/${show.id}`,
+                                "url": `${appUrl}/watch/tv/${show.id}`,
                                 "image": `https://image.tmdb.org/t/p/w500${show.poster_path}`,
                                 "datePublished": show.first_air_date
                             }

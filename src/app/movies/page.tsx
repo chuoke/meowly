@@ -3,13 +3,13 @@ import MovieRow from "@/components/MovieRow";
 import { tmdb } from "@/lib/tmdb";
 import InfiniteGenres from "@/components/InfiniteGenres";
 import { Metadata } from "next";
-import { appName } from "@/lib/app-config";
+import { appName, appUrl } from "@/lib/app-config";
 
 export const metadata: Metadata = {
     title: `Stream the Best Movies Online Free in HD | ${appName}`,
     description: `Stream the best movies online for free in HD. Discover trending blockbusters, movie classics, and the latest releases on ${appName}.`,
     alternates: {
-        canonical: "https://meowly.qzz.io/movies",
+        canonical: `${appUrl}/movies`,
     },
 };
 
@@ -38,7 +38,7 @@ export default async function MoviesPage() {
                             "item": {
                                 "@type": "Movie",
                                 "name": movie.title || movie.name,
-                                "url": `https://meowly.qzz.io/watch/movie/${movie.id}`,
+                                "url": `${appUrl}/watch/movie/${movie.id}`,
                                 "image": `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
                                 "datePublished": movie.release_date
                             }

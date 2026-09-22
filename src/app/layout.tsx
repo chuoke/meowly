@@ -13,7 +13,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://meowly.qzz.io"),
+  metadataBase: new URL(appUrl),
   title: {
     default: `${appName} | Stream Unlimited Movies & TV Shows Online Free`,
     template: `%s | ${appName}`
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://meowly.qzz.io",
+    url: appUrl,
     siteName: appName,
     title: `${appName} | Stream Unlimited Movies & TV Shows Online Free`,
     description: "Unlimited movies and TV shows for free. Premium streaming experience with no ads.",
@@ -82,7 +82,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 import ClientOnlyComponents from "@/components/ClientOnlyComponents";
-import { appName } from "@/lib/app-config";
+import { appName, appUrl } from "@/lib/app-config";
 
 export default function RootLayout({
   children,
@@ -131,10 +131,10 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": appName,
-              "url": "https://meowly.qzz.io",
+              "url": appUrl,
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://meowly.qzz.io/search?q={search_term_string}",
+                "target": `${appUrl}/search?q={search_term_string}`,
                 "query-input": "required name=search_term_string"
               }
             })
@@ -147,8 +147,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": appName,
-              "url": "https://meowly.qzz.io",
-              "logo": "https://meowly.qzz.io/icon-512.png",
+              "url": appUrl,
+              "logo": `${appUrl}/icon-512.png`,
               "sameAs": [
                 "https://twitter.com/meowly",
                 "https://github.com/utkarshgupta188/meowly"
