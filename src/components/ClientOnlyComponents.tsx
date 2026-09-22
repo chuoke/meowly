@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { adScriptUrls } from "@/lib/app-config";
 
 const AdBlockerPopup = dynamic(() => import("@/components/AdBlockerPopup"), { ssr: false });
 const PwaRegister = dynamic(() => import("@/components/PwaRegister"), { ssr: false });
@@ -16,22 +17,15 @@ export default function ClientOnlyComponents() {
   const pathname = usePathname();
 
   useEffect(() => {
-    // Remove existing scripts if present to ensure reload on route navigation
-    const scriptIds = ['ad-network-script-1', 'ad-network-script-2', 'ad-network-script-3'];
+    const scriptIds = adScriptUrls.map((_, index) => `ad-network-script-${index}`);
     scriptIds.forEach(id => {
       const existing = document.getElementById(id);
       if (existing) existing.remove();
     });
 
-    const sources = [
-      { id: 'ad-network-script-1', src: '//fi.chaufergabelle.com/rnoAntQzBel2t/151988' },
-      { id: 'ad-network-script-2', src: '//mr.acktontables.com/svXxFoBaWzN/153387' },
-      { id: 'ad-network-script-3', src: '//ri.thlaspiyeaoman.com/iZvpfdi16luL/153388' },
-    ];
-
-    sources.forEach(({ id, src }) => {
+    adScriptUrls.forEach((src, index) => {
       const script = document.createElement('script');
-      script.id = id;
+      script.id = scriptIds[index];
       script.setAttribute('data-cfasync', 'false');
       script.async = true;
       script.type = 'text/javascript';

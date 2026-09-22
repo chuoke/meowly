@@ -106,25 +106,6 @@ export default function RootLayout({
         </Script>
 
         <script
-          data-cfasync="false"
-          async
-          type="text/javascript"
-          src="//fi.chaufergabelle.com/rnoAntQzBel2t/151988"
-        />
-        <script
-          data-cfasync="false"
-          async
-          type="text/javascript"
-          src="//mr.acktontables.com/svXxFoBaWzN/153387"
-        />
-        <script
-          data-cfasync="false"
-          async
-          type="text/javascript"
-          src="//ri.thlaspiyeaoman.com/iZvpfdi16luL/153388"
-        />
-
-        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
