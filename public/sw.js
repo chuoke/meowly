@@ -1,13 +1,9 @@
-const CACHE_NAME = "meowly-pwa-cache-v1";
+const CACHE_NAME = "pwa-cache-v3";
 const OFFLINE_URL = "/offline";
 
 const ASSETS_TO_PRECACHE = [
   "/",
   OFFLINE_URL,
-  "/icon.png",
-  "/apple-icon.png",
-  "/icon-192.png",
-  "/icon-512.png",
 ];
 
 // Cache limit control to avoid bloat

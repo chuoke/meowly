@@ -25,14 +25,9 @@ export const metadata: Metadata = {
   publisher: appName,
   referrer: "origin",
   icons: {
-    icon: [
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
-    ],
-    shortcut: "/icon-192.png",
-    apple: [
-      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
-    ],
+    icon: brandIconUrl,
+    shortcut: brandIconUrl,
+    apple: brandAppleIconUrl,
   },
   openGraph: {
     type: "website",
@@ -41,20 +36,13 @@ export const metadata: Metadata = {
     siteName: appName,
     title: `${appName} | Stream Unlimited Movies & TV Shows Online Free`,
     description: "Unlimited movies and TV shows for free. Premium streaming experience with no ads.",
-    images: [
-      {
-        url: "/icon-512.png",
-        width: 512,
-        height: 512,
-        alt: `${appName} Cinema`,
-      },
-    ],
+    images: [brandOpenGraphImageUrl],
   },
   twitter: {
     card: "summary_large_image",
     title: `${appName} | Stream Unlimited Movies & TV Shows Online Free`,
     description: "Unlimited movies and TV shows for free. Premium streaming experience.",
-    images: ["/icon-512.png"],
+    images: [brandTwitterImageUrl],
     creator: "@meowly",
   },
   appleWebApp: {
@@ -83,6 +71,12 @@ import Footer from "@/components/Footer";
 
 import ClientOnlyComponents from "@/components/ClientOnlyComponents";
 import { appName, appUrl } from "@/lib/app-config";
+import {
+  brandAppleIconUrl,
+  brandIconUrl,
+  brandOpenGraphImageUrl,
+  brandTwitterImageUrl,
+} from "@/lib/brand-assets";
 
 export default function RootLayout({
   children,
@@ -129,7 +123,7 @@ export default function RootLayout({
               "@type": "Organization",
               "name": appName,
               "url": appUrl,
-              "logo": `${appUrl}/icon-512.png`,
+              "logo": `${appUrl}${brandIconUrl}`,
               "sameAs": [
                 "https://twitter.com/meowly",
                 "https://github.com/utkarshgupta188/meowly"

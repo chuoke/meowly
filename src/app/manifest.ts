@@ -1,5 +1,11 @@
 import type { MetadataRoute } from "next";
 import { appName } from "@/lib/app-config";
+import { brandDefaultIconUrl, brandPwaIcon192Url, brandPwaIcon512Url } from "@/lib/brand-assets";
+
+export const dynamic = "force-static";
+
+const pwaIconUrl = brandPwaIcon512Url || brandDefaultIconUrl;
+const pwaIconSize = brandPwaIcon512Url ? "512x512" : "1024x1024";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
@@ -13,28 +19,20 @@ export default function manifest(): MetadataRoute.Manifest {
     orientation: "any",
     scope: "/",
     icons: [
+      ...(brandPwaIcon192Url
+        ? [{ src: brandPwaIcon192Url, sizes: "192x192", purpose: "any" as const }]
+        : []),
+      ...(brandPwaIcon512Url
+        ? [{ src: brandPwaIcon512Url, sizes: "512x512", purpose: "any" as const }]
+        : []),
       {
-        src: "/icon-192.png",
-        sizes: "192x192",
-        type: "image/png",
+        src: pwaIconUrl,
+        sizes: pwaIconSize,
         purpose: "any",
       },
       {
-        src: "/icon-192.png",
-        sizes: "192x192",
-        type: "image/png",
-        purpose: "maskable",
-      },
-      {
-        src: "/icon-512.png",
-        sizes: "512x512",
-        type: "image/png",
-        purpose: "any",
-      },
-      {
-        src: "/icon-512.png",
-        sizes: "512x512",
-        type: "image/png",
+        src: pwaIconUrl,
+        sizes: pwaIconSize,
         purpose: "maskable",
       },
     ],
