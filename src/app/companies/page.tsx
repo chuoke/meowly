@@ -2,10 +2,11 @@ import React from "react";
 import { tmdb } from "@/lib/tmdb";
 import { Metadata } from "next";
 import CompaniesClient from "./CompaniesClient";
+import { appName } from "@/lib/app-config";
 
 export const metadata: Metadata = {
-    title: "Production Studios & Companies | Meowly",
-    description: "Discover the world's leading film production companies, iconic studios, and entertainment networks that shape modern cinema on Meowly.",
+    title: `Production Studios & Companies | ${appName}`,
+    description: `Discover the world's leading film production companies, iconic studios, and entertainment networks that shape modern cinema on ${appName}.`,
 };
 
 // Selection of the most iconic and highly cataloged production companies on TMDB
@@ -82,7 +83,7 @@ export default async function CompaniesPage() {
                         <p className="leading-relaxed">
                             Behind every great film is a production studio that dared to bring a vision to life. 
                             From the historic "Big Five" of Hollywood's Golden Age to the modern powerhouses of animation and independent filmmaking, production companies are the backbone of the entertainment industry. 
-                            At Meowly, we spotlight these iconic institutions, allowing you to explore the vast filmographies of the world's most influential studios.
+                            At {appName}, we spotlight these iconic institutions, allowing you to explore the vast filmographies of the world's most influential studios.
                         </p>
                         <p className="leading-relaxed">
                             Discover the magic of Marvel Studios' superhero epics, Lucasfilm's intergalactic sagas, or Pixar's heartwarming animated masterpieces. 

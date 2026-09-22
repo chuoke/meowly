@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import { WifiOff, RefreshCw, Film, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { appName } from "@/lib/app-config";
 
 export default function OfflinePage() {
   const [isOnline, setIsOnline] = useState(false);
@@ -58,7 +59,7 @@ export default function OfflinePage() {
         {/* Brand */}
         <div className="flex items-center gap-1.5 mb-4 opacity-40">
           <Film className="h-4 w-4" />
-          <span className="text-xs font-black tracking-widest uppercase">MEOWLY CINEMA</span>
+          <span className="text-xs font-black tracking-widest uppercase">{appName} Cinema</span>
         </div>
 
         {/* Title */}
@@ -102,7 +103,7 @@ export default function OfflinePage() {
             </li>
             <li className="flex items-start gap-2.5">
               <span className="w-1.5 h-1.5 rounded-full bg-white/40 mt-1.5 flex-shrink-0" />
-              <span>Install the Meowly app from the install button to ensure offline layouts cache correctly!</span>
+              <span>Install the {appName} app from the install button to ensure offline layouts cache correctly!</span>
             </li>
           </ul>
         </motion.div>

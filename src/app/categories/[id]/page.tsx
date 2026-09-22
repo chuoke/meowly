@@ -1,5 +1,6 @@
 import { tmdb } from "@/lib/tmdb";
 import MovieCard from "@/components/MovieCard";
+import { appName } from "@/lib/app-config";
 
 interface GenrePageProps {
     params: Promise<{ id: string }>;
@@ -12,8 +13,8 @@ export async function generateMetadata({ searchParams }: GenrePageProps) {
     const typeLabel = type === "tv" ? "TV Shows" : "Movies";
     
     return {
-        title: `${genreName} ${typeLabel} | Meowly`,
-        description: `Browse the best ${genreName} ${typeLabel.toLowerCase()} on Meowly. Watch now for free in HD.`,
+        title: `${genreName} ${typeLabel} | ${appName}`,
+        description: `Browse the best ${genreName} ${typeLabel.toLowerCase()} on ${appName}. Watch now for free in HD.`,
     };
 }
 

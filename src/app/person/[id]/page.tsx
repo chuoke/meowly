@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 import PersonDetailsClient from '@/components/PersonDetailsClient';
+import { appName } from "@/lib/app-config";
 
 interface PersonPageProps {
     params: Promise<{ id: string }>;
@@ -15,13 +16,13 @@ interface PersonPageProps {
 export async function generateMetadata({ params }: PersonPageProps) {
     const { id } = await params;
     const person = await tmdb.getPersonDetails(id);
-    if (!person) return { title: "Person | Meowly" };
+    if (!person) return { title: `Person | ${appName}` };
 
     return {
-        title: `${person.name} | Meowly`,
+        title: `${person.name} | ${appName}`,
         description: person.biography,
         openGraph: {
-            title: `${person.name} | Meowly`,
+            title: `${person.name} | ${appName}`,
             description: person.biography,
             images: [
                 {

@@ -4,6 +4,7 @@ import { tmdb } from "@/lib/tmdb";
 import RecentlyPlayedRow from "@/components/RecentlyPlayedRow";
 import InfiniteGenres from "@/components/InfiniteGenres";
 import { Metadata } from "next";
+import { appName } from "@/lib/app-config";
 
 export const metadata: Metadata = {
   alternates: {
@@ -42,7 +43,7 @@ export default async function Home() {
 
   return (
     <main className="min-h-screen pb-20 overflow-x-hidden">
-      <h1 className="sr-only">Meowly | Watch Movies & TV Shows Online Free</h1>
+      <h1 className="sr-only">{appName} | Watch Movies & TV Shows Online Free</h1>
 
       {heroMovies && heroMovies.length > 0 && <Hero movies={heroMovies as any} />}
 
@@ -65,12 +66,12 @@ export default async function Home() {
               Unlimited Streaming, Reimagined
             </h2>
             <p className="text-gray-400 leading-relaxed text-lg">
-              Meowly is your premier destination for discovering and watching the latest movies and TV shows online for free. 
+              {appName} is your premier destination for discovering and watching the latest movies and TV shows online for free.
               Our platform is designed with a premium aesthetic inspired by industry leaders, ensuring that your viewing experience is not just about the content, but also about the journey. 
               With a vast library powered by TMDB, you have access to millions of titles, from timeless classics to the latest blockbusters.
             </p>
             <p className="text-gray-400 leading-relaxed text-lg">
-              Whether you're looking for action-packed adventures, heart-wrenching dramas, or side-splitting comedies, Meowly's intuitive categorization and powerful search engine make it easy to find exactly what you're in the mood for. 
+              Whether you're looking for action-packed adventures, heart-wrenching dramas, or side-splitting comedies, {appName}&apos;s intuitive categorization and powerful search engine make it easy to find exactly what you're in the mood for.
               Enjoy high-definition streaming on any device, anywhere, anytime.
             </p>
           </div>
@@ -81,9 +82,9 @@ export default async function Home() {
             </h3>
             <div className="space-y-6">
               <div>
-                <h4 className="text-white font-semibold mb-2">Is Meowly free to use?</h4>
+                <h4 className="text-white font-semibold mb-2">Is {appName} free to use?</h4>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Yes, Meowly is completely free to use. We don't require any subscriptions or hidden fees to access our library.
+                  Yes, {appName} is completely free to use. We don't require any subscriptions or hidden fees to access our library.
                 </p>
               </div>
               <div>
@@ -95,7 +96,7 @@ export default async function Home() {
               <div>
                 <h4 className="text-white font-semibold mb-2">What devices are supported?</h4>
                 <p className="text-gray-400 text-sm leading-relaxed">
-                  Meowly is fully responsive and works on desktops, tablets, and smartphones. It's also optimized for casting to larger screens.
+                  {appName} is fully responsive and works on desktops, tablets, and smartphones. It's also optimized for casting to larger screens.
                 </p>
               </div>
             </div>
@@ -105,7 +106,7 @@ export default async function Home() {
         <div className="text-center max-w-3xl mx-auto space-y-4 pb-10">
           <h2 className="text-2xl font-bold text-white">Join Millions of Movie Lovers</h2>
           <p className="text-gray-400">
-            Start your cinematic journey with Meowly today. Discover new favorites, build your watchlist, and enjoy a premium streaming experience that respects your time and your privacy.
+            Start your cinematic journey with {appName} today. Discover new favorites, build your watchlist, and enjoy a premium streaming experience that respects your time and your privacy.
           </p>
         </div>
       </div>

@@ -2,6 +2,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { Github } from 'lucide-react';
+import { appName } from "@/lib/app-config";
 
 const Footer = () => {
     return (
@@ -11,7 +12,7 @@ const Footer = () => {
                 {/* Left: Brand & Links */}
                 <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8">
                     <span className="font-bold tracking-tighter text-prime-blue uppercase">
-                        Meow<span className="text-white">ly</span>
+                        {appName}
                     </span>
                     <nav className="flex gap-4">
                         <Link href="/" className="hover:text-white transition-colors">Home</Link>
@@ -24,7 +25,7 @@ const Footer = () => {
 
                 {/* Middle: Disclaimer (Hidden on very small screens or abbreviated) */}
                 <p className="text-xs text-gray-600 max-w-md hidden md:block text-center mx-auto leading-tight">
-                    Meowly does not host any content on our servers.
+                    {appName} does not host any content on our servers.
                 </p>
 
                 {/* Right: Credits */}

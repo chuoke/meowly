@@ -5,6 +5,7 @@ import { Server, Maximize2, Minimize2, RefreshCcw, Share2, Check, ChevronLeft, C
 import { cn } from "@/lib/utils";
 import { saveToRecentlyPlayed } from "@/lib/storage";
 import Dropdown from "@/components/ui/Dropdown";
+import { appName } from "@/lib/app-config";
 
 interface VideoPlayerProps {
     type: "movie" | "tv";
@@ -39,8 +40,8 @@ const SERVERS = [
     },
     {
         name: "Vidrift",
-        movie: (id: string) => `https://embed.vidrift.in/embed/movie/${id}?brand=Meowly`,
-        show: (id: string, s: number, e: number) => `https://embed.vidrift.in/embed/tv/${id}/${s}/${e}?brand=Meowly`,
+        movie: (id: string) => `https://embed.vidrift.in/embed/movie/${id}?brand=${encodeURIComponent(appName)}`,
+        show: (id: string, s: number, e: number) => `https://embed.vidrift.in/embed/tv/${id}/${s}/${e}?brand=${encodeURIComponent(appName)}`,
         useSandbox: false
     },
     {

@@ -1,10 +1,11 @@
 import React from 'react';
 import BackButton from "@/components/BackButton";
 import { Metadata } from "next";
+import { appName } from "@/lib/app-config";
 
 export const metadata: Metadata = {
     title: "DMCA Policy",
-    description: "Meowly respects the intellectual property rights of others and expects its users to do the same.",
+    description: `${appName} respects the intellectual property rights of others and expects its users to do the same.`,
     alternates: {
         canonical: "https://meowly.qzz.io/dmca",
     },
@@ -19,16 +20,16 @@ export default function DMCA() {
                 <header className="space-y-4 border-b border-gray-800 pb-8">
                     <h1 className="text-3xl md:text-5xl font-bold text-white tracking-tight">DMCA Policy</h1>
                     <p className="text-lg text-gray-400">
-                        Is Meowly Legal?
+                        Is {appName} Legal?
                     </p>
                 </header>
 
                 <section className="space-y-4">
                     <p>
-                        Meowly operates in a legal gray area. Copyright laws vary significantly from country to country, and the legality of streaming services can be complex and subject to interpretation.
+                        {appName} operates in a legal gray area. Copyright laws vary significantly from country to country, and the legality of streaming services can be complex and subject to interpretation.
                     </p>
                     <p>
-                        Meowly does not host any content on our servers. We simply provide links to media hosted on third-party services that are publicly available on the internet.
+                        {appName} does not host any content on our servers. We simply provide links to media hosted on third-party services that are publicly available on the internet.
                     </p>
                 </section>
 
@@ -38,7 +39,7 @@ export default function DMCA() {
                         Copyright laws vary by jurisdiction. In some countries, streaming content may be considered legal for personal use, while in others it may be prohibited.
                     </p>
                     <p>
-                        Users should be aware of the copyright laws in their respective countries and use Meowly at their own discretion and risk.
+                        Users should be aware of the copyright laws in their respective countries and use {appName} at their own discretion and risk.
                     </p>
                 </section>
 
@@ -65,7 +66,7 @@ export default function DMCA() {
                 <section className="space-y-4">
                     <h2 className="text-2xl font-bold text-white">Disclaimer</h2>
                     <p>
-                        Meowly is not responsible for and has no control over the content of any third-party website. We do not host any content and have no control over the nature, content, or availability of those sites.
+                        {appName} is not responsible for and has no control over the content of any third-party website. We do not host any content and have no control over the nature, content, or availability of those sites.
                     </p>
                     <p>
                         The inclusion of any links does not necessarily imply a recommendation or endorsement of the views expressed within them.

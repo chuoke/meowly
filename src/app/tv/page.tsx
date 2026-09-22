@@ -3,10 +3,11 @@ import MovieRow from "@/components/MovieRow";
 import { tmdb } from "@/lib/tmdb";
 import InfiniteGenres from "@/components/InfiniteGenres";
 import { Metadata } from "next";
+import { appName } from "@/lib/app-config";
 
 export const metadata: Metadata = {
-    title: "Watch Top Rated TV Series and Shows Online Free | Meowly",
-    description: "Watch the top rated TV series and shows online for free. Stream the best TV shows, currently airing series, and all-time favorites on Meowly.",
+    title: `Watch Top Rated TV Series and Shows Online Free | ${appName}`,
+    description: `Watch the top rated TV series and shows online for free. Stream the best TV shows, currently airing series, and all-time favorites on ${appName}.`,
     alternates: {
         canonical: "https://meowly.qzz.io/tv",
     },
@@ -69,13 +70,13 @@ export default async function TVPage() {
                             Binge-Worthy TV Series & Shows
                         </h2>
                         <p className="text-gray-400 leading-relaxed text-lg">
-                            Experience the best of television with Meowly's comprehensive library of TV shows and series. 
+                            Experience the best of television with {appName}&apos;s comprehensive library of TV shows and series.
                             From critically acclaimed dramas and hilarious sitcoms to captivating sci-fi and reality TV, we bring the best of the small screen directly to your devices. 
                             Our platform ensures you never miss an episode of your favorite series, with updates on currently airing shows and a deep archive of completed classics.
                         </p>
                         <p className="text-gray-400 leading-relaxed text-lg">
                             Explore popular series, top-rated shows, and what's airing today. 
-                            With Meowly, you can track your progress, discover new shows based on your interests, and enjoy a premium streaming experience tailored for TV enthusiasts.
+                            With {appName}, you can track your progress, discover new shows based on your interests, and enjoy a premium streaming experience tailored for TV enthusiasts.
                         </p>
                     </div>
 

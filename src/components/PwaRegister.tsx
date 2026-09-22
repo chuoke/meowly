@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { Download, X, Sparkles, MonitorPlay } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { appName } from "@/lib/app-config";
 
 declare global {
   interface Window {
@@ -187,7 +188,7 @@ export default function PwaRegister() {
                 <Sparkles className="h-3 w-3 text-amber-400 animate-pulse" />
               </div>
               <h3 className="text-sm font-bold text-white mb-1 tracking-tight">
-                Install Meowly Cinema
+                Install {appName} Cinema
               </h3>
               <p className="text-xs text-gray-400 leading-relaxed">
                 Add to your home screen for high-res offline layouts, standalone fullscreen, and faster playback.

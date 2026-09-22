@@ -1,10 +1,11 @@
 import React from "react";
 import { Info, Users, Heart, Zap, Globe, MessageCircle } from "lucide-react";
 import BackButton from "@/components/BackButton";
+import { appName } from "@/lib/app-config";
 
 export const metadata = {
   title: "About Us | The Premier Free Movie Discovery Platform",
-  description: "Learn more about Meowly, the premier destination for free movie and TV show streaming discovery.",
+  description: `Learn more about ${appName}, the premier destination for free movie and TV show streaming discovery.`,
   alternates: {
     canonical: "https://meowly.qzz.io/about",
   },
@@ -23,7 +24,7 @@ export default function AboutUs() {
             <Info className="h-8 w-8 text-accent" />
           </div>
           <h1 className="text-4xl md:text-5xl font-black text-white tracking-tight mb-4">
-            About Meowly
+            About {appName}
           </h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
             Redefining the way you discover and watch your favorite stories.
@@ -42,7 +43,7 @@ export default function AboutUs() {
             <Heart className="h-10 w-10 text-accent mb-4" />
             <h3 className="text-xl font-bold text-white mb-2">Built for Fans</h3>
             <p className="text-sm leading-relaxed">
-              Meowly was created by movie lovers, for movie lovers. Every feature is designed with the user in mind—from our ultra-clean Prime Video-inspired interface to our lightning-fast search capabilities.
+              {appName} was created by movie lovers, for movie lovers. Every feature is designed with the user in mind—from our ultra-clean Prime Video-inspired interface to our lightning-fast search capabilities.
             </p>
           </article>
         </section>
@@ -74,19 +75,19 @@ export default function AboutUs() {
               </div>
               <div>
                 <h4 className="text-lg font-bold text-white">Always Available</h4>
-                <p className="text-sm text-gray-400">Our team works tirelessly to ensure Meowly remains fast and reliable, even during peak traffic hours.</p>
+                <p className="text-sm text-gray-400">Our team works tirelessly to ensure {appName} remains fast and reliable, even during peak traffic hours.</p>
               </div>
             </div>
           </div>
 
           <div className="mt-12 space-y-6 border-t border-white/10 pt-8 text-sm leading-relaxed">
             <p>
-              Meowly was born out of a desire to create a streaming discovery platform that feels as premium as the content it showcases. 
+              {appName} was born out of a desire to create a streaming discovery platform that feels as premium as the content it showcases.
               We noticed that most free streaming search engines were cluttered with intrusive ads, confusing layouts, and poor performance. 
               Our goal was to change that by focusing on high-quality design, lightning-fast performance, and a user-first approach.
             </p>
             <p>
-              Technologically, Meowly leverages the latest in web standards, including Next.js for high-performance server-side rendering and Tailwind CSS for a sleek, responsive interface. 
+              Technologically, {appName} leverages the latest in web standards, including Next.js for high-performance server-side rendering and Tailwind CSS for a sleek, responsive interface.
               Our integration with the TMDB API allows us to provide up-to-the-minute data on millions of movies and TV shows, including detailed cast lists, high-resolution artwork, and accurate release information.
             </p>
             <p>

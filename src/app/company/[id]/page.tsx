@@ -1,6 +1,7 @@
 import React from "react";
 import { tmdb, TMDB_CONFIG } from "@/lib/tmdb";
 import CompanyDetailsClient from "@/components/CompanyDetailsClient";
+import { appName } from "@/lib/app-config";
 
 interface CompanyPageProps {
     params: Promise<{ id: string }>;
@@ -9,13 +10,13 @@ interface CompanyPageProps {
 export async function generateMetadata({ params }: CompanyPageProps) {
     const { id } = await params;
     const company = await tmdb.getCompanyDetails(id);
-    if (!company) return { title: "Studio | Meowly" };
+    if (!company) return { title: `Studio | ${appName}` };
 
     return {
-        title: `${company.name} | Meowly`,
+        title: `${company.name} | ${appName}`,
         description: `Explore movies and TV shows produced by ${company.name}.`,
         openGraph: {
-            title: `${company.name} | Meowly`,
+            title: `${company.name} | ${appName}`,
             description: `Explore movies and TV shows produced by ${company.name}.`,
             images: company.logo_path ? [
                 {

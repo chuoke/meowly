@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { ArrowRight, Bookmark, ExternalLink, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { appName } from "@/lib/app-config";
 
 export default function DomainRedirectPopup() {
   const [show, setShow] = useState(false);
@@ -66,7 +67,7 @@ export default function DomainRedirectPopup() {
             IMPORTANT UPDATE
           </span>
           <h2 className="text-2xl font-black tracking-tight text-white mb-3">
-            Meowly Has Moved!
+            {appName} Has Moved!
           </h2>
           
           <p className="text-sm text-gray-400 leading-relaxed mb-6">

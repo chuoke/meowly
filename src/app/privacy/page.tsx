@@ -1,10 +1,11 @@
 import React from "react";
 import { Shield, Lock, Eye, FileText, Globe, Bell } from "lucide-react";
 import BackButton from "@/components/BackButton";
+import { appName } from "@/lib/app-config";
 
 export const metadata = {
   title: "Privacy Policy",
-  description: "Learn how Meowly protects your privacy and handles your data.",
+  description: `Learn how ${appName} protects your privacy and handles your data.`,
   alternates: {
     canonical: "https://meowly.qzz.io/privacy",
   },
@@ -38,7 +39,7 @@ export default function PrivacyPolicy() {
               <h2 className="text-2xl font-bold text-white">1. Introduction</h2>
             </div>
             <p className="leading-relaxed">
-              At Meowly, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
+              At {appName}, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website. Please read this privacy policy carefully. If you do not agree with the terms of this privacy policy, please do not access the site.
             </p>
           </section>
 
@@ -96,7 +97,7 @@ export default function PrivacyPolicy() {
               If you have questions or comments about this Privacy Policy, please contact us at:
             </p>
             <div className="mt-4 p-6 bg-white/5 border border-white/10 rounded-2xl">
-              <p className="text-white font-semibold">Meowly Support</p>
+              <p className="text-white font-semibold">{appName} Support</p>
               <p className="text-accent">contact@meowtv.anonaddy.me</p>
             </div>
           </section>

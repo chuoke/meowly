@@ -1,16 +1,17 @@
 import { tmdb, TMDB_CONFIG } from "@/lib/tmdb";
 import MovieCard from "@/components/MovieCard";
+import { appName } from "@/lib/app-config";
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
     const collection = await tmdb.getCollection(id);
-    if (!collection) return { title: "Collection | Meowly" };
+    if (!collection) return { title: `Collection | ${appName}` };
 
     return {
-        title: `${collection.name} | Meowly`,
+        title: `${collection.name} | ${appName}`,
         description: collection.overview,
         openGraph: {
-            title: `${collection.name} | Meowly`,
+            title: `${collection.name} | ${appName}`,
             description: collection.overview,
             images: [
                 {

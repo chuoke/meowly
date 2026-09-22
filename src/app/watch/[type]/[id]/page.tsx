@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { tmdb } from "@/lib/tmdb";
 import WatchContainer from "@/components/WatchContainer";
+import { appName } from "@/lib/app-config";
 
 interface WatchPageProps {
     params: Promise<{
@@ -20,16 +21,16 @@ export async function generateMetadata({ params }: WatchPageProps) {
     const { type, id } = await params;
     const movie = await tmdb.getDetails(type, id);
     
-    if (!movie) return { title: "Meowly" };
+    if (!movie) return { title: appName };
 
     const title = movie.title || movie.name;
     const year = (movie.release_date || movie.first_air_date)?.split("-")[0];
     
     return {
-        title: `${title} (${year}) | Meowly`,
+        title: `${title} (${year}) | ${appName}`,
         description: movie.overview,
         openGraph: {
-            title: `${title} | Meowly`,
+            title: `${title} | ${appName}`,
             description: movie.overview,
             images: [
                 {
@@ -43,7 +44,7 @@ export async function generateMetadata({ params }: WatchPageProps) {
         },
         twitter: {
             card: "summary_large_image",
-            title: `${title} | Meowly`,
+            title: `${title} | ${appName}`,
             description: movie.overview,
             images: [`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`],
         }

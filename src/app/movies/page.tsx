@@ -3,10 +3,11 @@ import MovieRow from "@/components/MovieRow";
 import { tmdb } from "@/lib/tmdb";
 import InfiniteGenres from "@/components/InfiniteGenres";
 import { Metadata } from "next";
+import { appName } from "@/lib/app-config";
 
 export const metadata: Metadata = {
-    title: "Stream the Best Movies Online Free in HD | Meowly",
-    description: "Stream the best movies online for free in HD. Discover trending blockbusters, movie classics, and the latest releases on Meowly.",
+    title: `Stream the Best Movies Online Free in HD | ${appName}`,
+    description: `Stream the best movies online for free in HD. Discover trending blockbusters, movie classics, and the latest releases on ${appName}.`,
     alternates: {
         canonical: "https://meowly.qzz.io/movies",
     },
@@ -69,7 +70,7 @@ export default async function MoviesPage() {
                             Discover the Best Movies Online
                         </h2>
                         <p className="text-gray-400 leading-relaxed text-lg">
-                            Dive into a world of cinematic excellence with Meowly's extensive movie collection. 
+                            Dive into a world of cinematic excellence with {appName}&apos;s extensive movie collection.
                             From the latest Hollywood blockbusters and indie gems to timeless classics and international cinema, our platform offers a diverse range of genres to satisfy every movie buff's cravings. 
                             With high-quality streaming and an intuitive interface, your next movie night is just a click away.
                         </p>

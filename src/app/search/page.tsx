@@ -8,6 +8,7 @@ import MovieCard from "@/components/MovieCard";
 import SearchGrid from "@/components/SearchGrid";
 import { searchAction, getTrendingAction, getGenreListAction } from "@/app/actions";
 import { Movie } from "@/lib/tmdb";
+import { appName } from "@/lib/app-config";
 
 const SearchSkeleton = () => {
     return (
@@ -137,7 +138,7 @@ function SearchContent() {
             <div className="pt-24 sm:pt-28 md:pt-32 px-4 sm:px-8 md:px-12">
                 <header>
                     <h1 className="text-2xl md:text-4xl font-black mb-8 transition-all animate-in fade-in slide-in-from-left duration-700 truncate max-w-full pb-2">
-                        {query ? `Results for "${query}"` : "Search Meowly"}
+                        {query ? `Results for "${query}"` : `Search ${appName}`}
                     </h1>
                 </header>
 
@@ -299,7 +300,7 @@ function SearchContent() {
                     <div className="space-y-6">
                         <h2 className="text-2xl font-bold text-white">Advanced Search Features</h2>
                         <p className="leading-relaxed">
-                            Meowly's powerful search engine allows you to find your favorite entertainment in seconds. 
+                            {appName}&apos;s powerful search engine allows you to find your favorite entertainment in seconds.
                             Our deep integration with the TMDB database means you can search not just by movie or TV show titles, but also by actors, directors, production companies, and specific genres.
                         </p>
                         <p className="leading-relaxed">
@@ -336,7 +337,7 @@ export default function SearchPage() {
             <main className="min-h-screen bg-black pb-20">
                 <div className="pt-24 sm:pt-28 md:pt-32 px-4 sm:px-8 md:px-12">
                     <h1 className="text-2xl md:text-4xl font-black mb-8 animate-pulse text-white">
-                        Search Meowly
+                        Search {appName}
                     </h1>
                     <SearchSkeleton />
                 </div>

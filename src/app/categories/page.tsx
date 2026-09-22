@@ -2,10 +2,11 @@ import { tmdb } from "@/lib/tmdb";
 import MovieRow from "@/components/MovieRow";
 import Link from "next/link";
 import { Metadata } from "next";
+import { appName } from "@/lib/app-config";
 
 export const metadata: Metadata = {
     title: "Movie & TV Genres",
-    description: "Browse through a wide range of movie and TV show categories on Meowly.",
+    description: `Browse through a wide range of movie and TV show categories on ${appName}.`,
     alternates: {
         canonical: "https://meowly.qzz.io/categories",
     },
@@ -85,7 +86,7 @@ export default async function CategoriesPage() {
                         </h2>
                         <p className="leading-relaxed">
                             Genres are the roadmap of cinema, guiding us through different worlds, emotions, and experiences. 
-                            At Meowly, we've organized our vast library into intuitive categories, making it easier than ever to find the exact type of story you're in the mood for. 
+                            At {appName}, we've organized our vast library into intuitive categories, making it easier than ever to find the exact type of story you're in the mood for.
                             From the high-octane thrills of Action to the thought-provoking depth of Documentaries, our genre sections are your gateway to discovery.
                         </p>
                         <p className="leading-relaxed">

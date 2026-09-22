@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { getMoctaleReviewsAction } from "@/app/actions";
 import { Skeleton } from "@/components/Skeleton";
+import { appName } from "@/lib/app-config";
 
 interface Review {
     id?: string | number;
@@ -726,7 +727,7 @@ export default function MoctaleReviews({ title, date, type, tmdbRating, genres, 
 
             {/* Disclaimer Footer */}
             <div className="text-center text-[14px] text-gray-500/80 max-w-2xl mx-auto pt-8 border-t border-white/5 leading-relaxed font-light">
-                Disclaimer: Meowly is not affiliated with and does not own Moctale. Review content is sourced from public endpoints and will be promptly removed upon request.
+                Disclaimer: {appName} is not affiliated with and does not own Moctale. Review content is sourced from public endpoints and will be promptly removed upon request.
             </div>
         </motion.div>
     );

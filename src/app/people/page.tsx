@@ -2,10 +2,11 @@ import React from "react";
 import PeopleClient from "./PeopleClient";
 import { tmdb } from "@/lib/tmdb";
 import { Metadata } from "next";
+import { appName } from "@/lib/app-config";
 
 export const metadata: Metadata = {
-    title: "Cast & Creators | Meowly",
-    description: "Browse the world's most popular screen icons, actors, legendary directors, and brilliant screenwriters on Meowly.",
+    title: `Cast & Creators | ${appName}`,
+    description: `Browse the world's most popular screen icons, actors, legendary directors, and brilliant screenwriters on ${appName}.`,
 };
 
 export default async function PeoplePage() {
@@ -48,7 +49,7 @@ export default async function PeoplePage() {
                         <p className="leading-relaxed">
                             A movie is only as good as the people who bring it to life. 
                             From the legendary actors who grace the screen with their presence to the brilliant directors and screenwriters who work tirelessly behind the scenes, the "People" of cinema are the heartbeat of every story. 
-                            At Meowly, we celebrate these talented individuals, providing you with deep insights into their careers and contributions to the world of entertainment.
+                            At {appName}, we celebrate these talented individuals, providing you with deep insights into their careers and contributions to the world of entertainment.
                         </p>
                         <p className="leading-relaxed">
                             Discover the most popular screen icons, trending actors, and award-winning filmmakers from across the globe. 

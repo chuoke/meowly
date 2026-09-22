@@ -15,14 +15,14 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://meowly.qzz.io"),
   title: {
-    default: "Meowly | Stream Unlimited Movies & TV Shows Online Free",
-    template: "%s | Meowly"
+    default: `${appName} | Stream Unlimited Movies & TV Shows Online Free`,
+    template: `%s | ${appName}`
   },
-  description: "Unlimited movies and TV shows for free. Inspired by Prime Video aesthetics, Meowly offers a premium streaming experience.",
+  description: `Unlimited movies and TV shows for free. Inspired by Prime Video aesthetics, ${appName} offers a premium streaming experience.`,
   keywords: ["movies", "tv shows", "streaming", "free movies", "watch online", "meowly", "meowtv"],
-  authors: [{ name: "Meowly Team" }],
-  creator: "Meowly",
-  publisher: "Meowly",
+  authors: [{ name: `${appName} Team` }],
+  creator: appName,
+  publisher: appName,
   referrer: "origin",
   icons: {
     icon: [
@@ -38,21 +38,21 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://meowly.qzz.io",
-    siteName: "Meowly",
-    title: "Meowly | Stream Unlimited Movies & TV Shows Online Free",
+    siteName: appName,
+    title: `${appName} | Stream Unlimited Movies & TV Shows Online Free`,
     description: "Unlimited movies and TV shows for free. Premium streaming experience with no ads.",
     images: [
       {
         url: "/icon-512.png",
         width: 512,
         height: 512,
-        alt: "Meowly Cinema",
+        alt: `${appName} Cinema`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Meowly | Stream Unlimited Movies & TV Shows Online Free",
+    title: `${appName} | Stream Unlimited Movies & TV Shows Online Free`,
     description: "Unlimited movies and TV shows for free. Premium streaming experience.",
     images: ["/icon-512.png"],
     creator: "@meowly",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
-    title: "Meowly Cinema",
+    title: `${appName} Cinema`,
   },
   formatDetection: {
     telephone: false,
@@ -82,6 +82,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 import ClientOnlyComponents from "@/components/ClientOnlyComponents";
+import { appName } from "@/lib/app-config";
 
 export default function RootLayout({
   children,
@@ -129,7 +130,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "Meowly",
+              "name": appName,
               "url": "https://meowly.qzz.io",
               "potentialAction": {
                 "@type": "SearchAction",
@@ -145,7 +146,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              "name": "Meowly",
+              "name": appName,
               "url": "https://meowly.qzz.io",
               "logo": "https://meowly.qzz.io/icon-512.png",
               "sameAs": [

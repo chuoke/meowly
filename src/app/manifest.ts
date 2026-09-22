@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
+import { appName } from "@/lib/app-config";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Meowly",
-    short_name: "Meowly",
+    name: appName,
+    short_name: appName,
     description: "Unlimited movies and TV shows for free. Inspired by Prime Video.",
     start_url: "/",
     display: "standalone",

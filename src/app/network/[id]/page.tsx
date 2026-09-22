@@ -1,6 +1,7 @@
 import React from "react";
 import { tmdb, TMDB_CONFIG } from "@/lib/tmdb";
 import NetworkDetailsClient from "@/components/NetworkDetailsClient";
+import { appName } from "@/lib/app-config";
 
 interface NetworkPageProps {
     params: Promise<{ id: string }>;
@@ -9,13 +10,13 @@ interface NetworkPageProps {
 export async function generateMetadata({ params }: NetworkPageProps) {
     const { id } = await params;
     const network = await tmdb.getNetworkDetails(id);
-    if (!network) return { title: "Network | Meowly" };
+    if (!network) return { title: `Network | ${appName}` };
 
     return {
-        title: `${network.name} | Meowly`,
+        title: `${network.name} | ${appName}`,
         description: `Explore TV shows on the ${network.name} network.`,
         openGraph: {
-            title: `${network.name} | Meowly`,
+            title: `${network.name} | ${appName}`,
             description: `Explore TV shows on the ${network.name} network.`,
             images: network.logo_path ? [
                 {

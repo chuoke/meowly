@@ -2,9 +2,10 @@ import React from "react";
 import AwardsClient from "./AwardsClient";
 import { tmdb } from "@/lib/tmdb";
 import { Metadata } from "next";
+import { appName } from "@/lib/app-config";
 
 export const metadata: Metadata = {
-    title: "Awards | Meowly",
+    title: `Awards | ${appName}`,
     description: "Browse prestigious award-winning masterworks, from Oscar Best Picture winners to Cannes Palme d'Or masterpieces and Filmfare classics.",
 };
 
@@ -60,7 +61,7 @@ export default async function AwardsPage() {
                         </h2>
                         <p className="leading-relaxed">
                             Awards are more than just trophies; they are a celebration of storytelling, technical mastery, and the profound impact of cinema on our culture. 
-                            At Meowly, we've curated lists of the most prestigious award-winning films from around the globe, ensuring you have access to the very best that the world of movies has to offer.
+                            At {appName}, we've curated lists of the most prestigious award-winning films from around the globe, ensuring you have access to the very best that the world of movies has to offer.
                         </p>
                         <p className="leading-relaxed">
                             From the glamorous red carpets of the Academy Awards to the critical acclaim of the Cannes Film Festival and the rich heritage of the Filmfare Awards, our collections span across continents and categories. 

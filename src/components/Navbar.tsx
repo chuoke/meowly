@@ -7,6 +7,7 @@ import { Search, Menu, X, ArrowLeft, Dices, Download, Mic, Cat, HelpCircle } fro
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
 import { surpriseMe } from "@/app/actions";
+import { appName } from "@/lib/app-config";
 
 const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -464,7 +465,7 @@ const Navbar = () => {
                                     <button
                                         onClick={handlePwaInstall}
                                         className="p-2 text-gray-400 hover:text-accent transition-all duration-300 rounded-full hover:bg-white/10 flex items-center justify-center relative group"
-                                        title="Install Meowly"
+                                        title={`Install ${appName}`}
                                     >
                                         <Download className="h-5 w-5 animate-pulse text-amber-400" />
                                     </button>
